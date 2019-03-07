@@ -1,0 +1,17 @@
+{
+  "name": "react-native-android-backer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "lint": "neutrino lint",
+    "test": "neutrino test"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb-base": "^8.3.0",
+    "@neutrinojs/jest": "^8.3.0",
+    "@neutrinojs/library": "^8.3.0",
+    "neutrino": "^8.3.0"
+  }
+}
