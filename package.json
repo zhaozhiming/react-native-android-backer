@@ -3,9 +3,30 @@
   "version": "0.1.0",
   "main": "./src/index.js",
   "author": "Zhao Zhiming",
+  "description": "A library for react native with react-navigation app to handle android back button event",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
   "scripts": {
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepublish": "yarn run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhaozhiming/react-native-android-backer.git"
+  },
+  "homepage": "https://github.com/zhaozhiming/react-native-android-backer",
+  "keywords": [
+    "react-native",
+    "react-navigation",
+    "android",
+    "android-back"
+  ],
+  "peerDependencies": {
+    "react": "16.x",
+    "react-native": "*",
+    "react-navigation": "3.x"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.2",
