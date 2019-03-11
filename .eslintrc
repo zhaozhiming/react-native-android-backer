@@ -1,0 +1,9 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "@react-native-community", "prettier"],
+  "rules": {
+    "curly": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": "off"
+  }
+}

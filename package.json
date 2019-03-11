@@ -1,23 +1,22 @@
 {
   "name": "react-native-android-backer",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "./src/index.js",
+  "author": "Zhao Zhiming",
   "license": "MIT",
   "scripts": {
-    "build": "neutrino build",
-    "lint": "neutrino lint",
-    "test": "neutrino test"
+    "lint": "eslint src"
   },
   "devDependencies": {
-    "@neutrinojs/airbnb-base": "^8.3.0",
-    "@neutrinojs/jest": "^8.3.0",
-    "@neutrinojs/library": "^8.3.0",
-    "@neutrinojs/react": "^8.3.0",
-    "@neutrinojs/react-components": "^8.3.0",
-    "neutrino": "^8.3.0",
-    "neutrino-preset-prettier-eslint": "^0.0.7",
+    "@react-native-community/eslint-config": "^0.0.2",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
     "react-native": "^0.58.6",
     "react-navigation": "^3.3.2"
   }
