@@ -4,7 +4,7 @@
   "main": "./src/index.js",
   "author": "Zhao Zhiming",
   "description": "A library for react native with react-navigation app to handle android back button event",
-  "license": "MIT",
+  "license": "Apache 2",
   "files": [
     "src"
   ],

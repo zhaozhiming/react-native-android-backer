@@ -3,15 +3,15 @@ import navigationService from './navigationServer';
 
 const EXIT_APP_EVENT_NAME = 'EXIT_APP_PRESS';
 
-// 第二次点击 back 键的时间戳，初始化时比当前时间少 2 秒
+// Second timestamp to click back button which should be later 2 seconds than current timestamp
 let rebackTime = Date.now() - 2000;
 
-const handlerBack = ({ exitToast, isExitScreen }) => {
+const handlerBack = ({ exitToast = () => {}, isExitScreen = false }) => {
   const currentRoute = navigationService.getCurrentRoute();
   const { routeName, params } = currentRoute;
 
   if (isExitScreen(routeName)) {
-    // 如果时间小于 2 秒就退出app
+    // if time interval of the double click less than 2 seconds, App will exit
     if (Date.now() - rebackTime < 2000) {
       BackHandler.exitApp();
       return true;
