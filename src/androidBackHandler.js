@@ -3,7 +3,7 @@ import navigationService from './navigationServer';
 
 const EXIT_APP_EVENT_NAME = 'EXIT_APP_PRESS';
 
-// Second timestamp to click back button which should be later 2 seconds than current timestamp
+// Second timestamp to click back button which should be less 2 seconds than current timestamp
 let rebackTime = Date.now() - 2000;
 
 const handlerBack = ({ exitToast = () => {}, isExitScreen = false }) => {
