@@ -1,6 +1,6 @@
 {
   "name": "react-native-android-backer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "./src/index.js",
   "author": "Zhao Zhiming",
   "description": "A library for react native with react-navigation app to handle android back button event",
