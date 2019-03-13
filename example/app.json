@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "foo",
-    "slug": "foo",
+    "name": "react-native-android-backer-demo",
+    "slug": "react-native-android-backer-demo",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
