@@ -50,7 +50,7 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
   * exitToast: type is function, the toast function for exit app
   * isExitScreen: type is function, check the current screen whether should exit app
 
-`AppNavigatior` is the initialize file of use [`expo`](https://expo.io/) to create App project，the source file is here[这里](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
+`AppNavigatior` is the initialize file of use [`expo`](https://expo.io/) to create App project，the source file is [here](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
 
 2. Second step is to replace `AppNavigator` to `AppNavigatorWithBacker`.
 
@@ -67,7 +67,7 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 * backPage && backPageParams： backPage's type is string，backPageParams's type is object, which were make back button to navigate to `backPage` with `backPageParams`.
 * isModalShow && closeModal：isModalShow's type is function,  closeModal's type is function, which were make back button to close modal. 
 
-使用示例：
+Example:
 
 ```js
 import React, { Component } from 'react';
@@ -126,9 +126,7 @@ class Foo extends Component {
 }
 ```
 
-## Demo
-
-[Demo](./example)
+## [Demo](./example)
 
 ## LICENSE
 

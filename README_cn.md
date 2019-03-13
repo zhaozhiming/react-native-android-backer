@@ -126,9 +126,7 @@ class Foo extends Component {
 }
 ```
 
-## 示例
-
-[示例 App](./example)
+## [例子](./example)
 
 ## 许可证
 
