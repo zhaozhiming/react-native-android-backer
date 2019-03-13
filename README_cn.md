@@ -6,7 +6,7 @@
 
 ## 这是什么？
 
-`React Native Android Backer` 是一个处理 Android 回退按钮的解决方案，它结合了 `react-navigation` 的 API 从而提供了强大的功能，特性如下：
+`React Native Android Backer` 是一个处理 Android 回退按钮的解决方案，它结合了 [react-navigation](https://reactnavigation.org/) 的 API 从而提供了强大的功能，特性如下：
 
 * 连续点击回退按钮退出 App
 * 设置是否禁用回退按钮
@@ -50,7 +50,7 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
   * exitToast: 退出 App 时的提示方法
   * isExitScreen: 判断该页面是否需要退出 App，一般是 App 首页或者一级页面需要退出
 
-`AppNavigatior` 就是用 [`expo`](https://expo.io/) 初始化项目后自动生成的文件，源文件可以参考 [这里](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
+`AppNavigatior` 就是用 [`expo`](https://expo.io/) 初始化 `React Native` 项目后自动生成的文件，源文件可以参考 [这里](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
 
 2. 然后将原先使用 `AppNavigator` 的地方替换为 `AppNavigatorWithBacker`。
 

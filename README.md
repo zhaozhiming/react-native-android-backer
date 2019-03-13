@@ -6,12 +6,12 @@
 
 ## What
 
-`React Native Android Backer` is a solution for React Native Android back button. It combines `react-navigation` API to provide powerful functionality, features as follow: 
+`React Native Android Backer` is a solution for React Native Android back button. It combines the [react-navigation](https://reactnavigation.org/) API to provide powerful functionality. The features as follow: 
 
-* double click back button to exit app
-* make back button disabled
-* click back button to navigate page
-* click back button to close modal
+* Double click back button to exit app
+* Make back button disabled
+* Click back button to navigate page
+* Click back button to close modal
 
 ## Install
 
@@ -46,11 +46,11 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 `withBacker(component, options)`: this API is a [HOC](https://reactjs.org/docs/higher-order-components.html), it receive 2 params:
 
 * component: type is React component, the wrap component
-* options: type is object, use to config the back button behaviors，attributes as follow：
+* options: type is object, use to config the back button behaviors，the attributes as follow：
   * exitToast: type is function, the toast function for exit app
   * isExitScreen: type is function, check the current screen whether should exit app
 
-`AppNavigatior` is the initialize file of use [`expo`](https://expo.io/) to create App project，the source file is [here](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
+`AppNavigatior` is the initialize file of use [`expo`](https://expo.io/) to create `React Native` project，the source file is [here](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
 
 2. Second step is to replace `AppNavigator` to `AppNavigatorWithBacker`.
 
@@ -61,7 +61,7 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 
 ## API
 
-`React Native Android Backer` use the `react-navigation` [params](https://reactnavigation.org/docs/en/params.html) to do different things according to back button behaviors, params as follow:
+`React Native Android Backer` use the `react-navigation` [params](https://reactnavigation.org/docs/en/params.html) to do different things according to the back button behaviors. The params as follow:
 
 * disableBack：type is boolean, set `true` to disable back button event.
 * backPage && backPageParams： backPage's type is string，backPageParams's type is object, which were make back button to navigate to `backPage` with `backPageParams`.
@@ -90,7 +90,7 @@ class Foo extends Component {
 
 ## Extra API
 
-`React Native Android Backer` also provide the extra API which is easy use the features of `react-navigation` but no need the `navigation` object: 
+`React Native Android Backer` also provide the extra API which is easy to use the features of `react-navigation` but no need the `navigation` object: 
 
 * navigate(page: string): navigate to some page
 * goBack(): go back to latest page
