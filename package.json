@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "eslint src",
-    "prepublish": "yarn run lint"
+    "prepare": "yarn run lint"
   },
   "repository": {
     "type": "git",
@@ -40,5 +40,9 @@
     "react": "^16.8.4",
     "react-native": "^0.58.6",
     "react-navigation": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=5.0.0"
   }
 }
