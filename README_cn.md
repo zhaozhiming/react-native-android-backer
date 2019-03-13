@@ -25,9 +25,9 @@ yarn add react-native-android-backer
 
 请确认 App 项目中已安装了以下库：
 
-* react: 要求版本大于 16.x
-* react-native: 建议版本大于 0.57.x
-* react-navigation: 建议版本大于 3.x
+* react: >= 16.x
+* react-native: >= 0.57.x
+* react-navigation: >= 3.x
 
 ## 使用说明
 
@@ -43,14 +43,14 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 });
 ```
 
-`withBacker(component, options)`: 这个方法一个 [高阶组件](https://reactjs.org/docs/higher-order-components.html)，它提供 2 个传入参数：
+`withBacker(component, options)`: 这个方法是一个 [高阶组件](https://reactjs.org/docs/higher-order-components.html)，它提供 2 个传入参数：
 
 * component: 要封装的组件，类型为 React 组件
 * options: 配置回退按钮的参数对象，有如下参数：
   * exitToast: 退出 App 时的提示方法
   * isExitScreen: 判断该页面是否需要退出 App，一般是 App 首页或者一级页面需要退出
 
-`AppNavigatior` 就是用 [`expo`](https://expo.io/) 初始化项目后自动生成的文件，源文件可以参考 [这里](./example/src/navigation/AppNavigator.js)。
+`AppNavigatior` 就是用 [`expo`](https://expo.io/) 初始化项目后自动生成的文件，源文件可以参考 [这里](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
 
 2. 然后将原先使用 `AppNavigator` 的地方替换为 `AppNavigatorWithBacker`。
 
@@ -80,7 +80,7 @@ class Foo extends Component {
       disableBack: true,
       backPage: 'Bar', // 按了回退键后跳转的页面
       backPageParams: { foo: 'foo' }, // 跳转页面时所需的参数
-      isModalShow: () => this.state.isVisible, // 提供一个方法来返回 modal 是否打开的 state
+      isModalShow: () => this.state.isVisible, // 提供一个方法来返回 modal 是否打开
       closeModal: () => this.setState({ isVisible: false }), // 提供一份方法来关闭 modal
     });
   }
@@ -90,7 +90,7 @@ class Foo extends Component {
 
 ## 额外的 API
 
-另外 `React Native Android Backer` 提供了不需要使用 `react-navigation` 的 `navigation` 对象就可以调用的 API：
+`React Native Android Backer` 还提供了额外的 API，可以在不用 `navigation` 对象的情况下轻松使用 `response-navigation` 的功能：
 
 * navigate: 页面跳转
 * goBack: 页面回退

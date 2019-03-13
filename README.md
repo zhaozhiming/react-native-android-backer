@@ -4,16 +4,16 @@
 
 [中文文档](./README_cn.md)
 
-## 这是什么？
+## What
 
-`React Native Android Backer` 是一个处理 Android 回退按钮的解决方案，它结合了 `react-navigation` 的 API 从而提供了强大的功能，特性如下：
+`React Native Android Backer` is a solution for React Native Android back button. It combines `react-navigation` API to provide powerful functionality, features as follow: 
 
-* 连续点击回退按钮退出 App
-* 设置是否禁用回退按钮
-* 页面跳转
-* 关闭 modal 弹出框
+* double click back button to exit app
+* make back button disabled
+* click back button to navigate page
+* click back button to close modal
 
-## 安装
+## Install
 
 ```sh
 npm install react-native-android-backer
@@ -21,17 +21,17 @@ npm install react-native-android-backer
 yarn add react-native-android-backer
 ```
 
-## 依赖的第三方库
+## Dependency Library
 
-请确认 App 项目中已安装了以下库：
+Please make sure project have installed libraries as follow:
 
-* react: 要求版本大于 16.x
-* react-native: 建议版本大于 0.57.x
-* react-navigation: 建议版本大于 3.x
+* react: >= 16.x
+* react-native: >= 0.57.x
+* react-navigation: >= 3.x
 
-## 使用说明
+## Get Started
 
-1. 首先使用 `withBacker` 方法，将 `react-navigation` 的 `AppNavigator` 组件进行封装：
+1. First step is to use `withBacker` function to encapsulation the `react-navigation` 的 `AppNavigator` component：
 
 ```js
 import { withBacker } from 'react-native-android-backer';
@@ -43,29 +43,29 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 });
 ```
 
-`withBacker(component, options)`: 这个方法一个 [高阶组件](https://reactjs.org/docs/higher-order-components.html)，它提供 2 个传入参数：
+`withBacker(component, options)`: this API is a [HOC](https://reactjs.org/docs/higher-order-components.html), it receive 2 params:
 
-* component: 要封装的组件，类型为 React 组件
-* options: 配置回退按钮的参数对象，有如下参数：
-  * exitToast: 退出 App 时的提示方法
-  * isExitScreen: 判断该页面是否需要退出 App，一般是 App 首页或者一级页面需要退出
+* component: type is React component, the wrap component
+* options: type is object, use to config the back button behaviors，attributes as follow：
+  * exitToast: type is function, the toast function for exit app
+  * isExitScreen: type is function, check the current screen whether should exit app
 
-`AppNavigatior` 就是用 [`expo`](https://expo.io/) 初始化项目后自动生成的文件，源文件可以参考 [这里](./example/src/navigation/AppNavigator.js)。
+`AppNavigatior` is the initialize file of use [`expo`](https://expo.io/) to create App project，the source file is here[这里](https://github.com/zhaozhiming/react-native-android-backer/blob/a9b594aba95616496cb22d9432c2c52eb58b9f61/example/navigation/AppNavigator.js)。
 
-2. 然后将原先使用 `AppNavigator` 的地方替换为 `AppNavigatorWithBacker`。
+2. Second step is to replace `AppNavigator` to `AppNavigatorWithBacker`.
 
 ```diff
 - <AppNavigator />
 + <AppNavigatorWithBacker />
 ```
 
-## API 介绍
+## API
 
-`React Native Android Backer` 通过 `react-navigation` 的 [跳转参数](https://reactnavigation.org/docs/en/params.html) 进行回退行为判断，有以下参数可以使用：
+`React Native Android Backer` use the `react-navigation` [params](https://reactnavigation.org/docs/en/params.html) to do different things according to back button behaviors, params as follow:
 
-* disableBack：类型为布尔值，是否禁止回退按钮，即按了回退按钮没有任何反应
-* backPage && backPageParams： backPage 类型为字符串，backPageParams 类型为对象，传入这 2 个参数时表示点击回退按钮会跳转到某个页面并带上跳转参数
-* isModalShow && closeModal：isModalShow 类型为方法， closeModal 类型为方法，传入这 2 个参数时表示点击回退按钮会关闭 modal 弹出框
+* disableBack：type is boolean, set `true` to disable back button event.
+* backPage && backPageParams： backPage's type is string，backPageParams's type is object, which were make back button to navigate to `backPage` with `backPageParams`.
+* isModalShow && closeModal：isModalShow's type is function,  closeModal's type is function, which were make back button to close modal. 
 
 使用示例：
 
@@ -75,28 +75,28 @@ import React, { Component } from 'react';
 class Foo extends Component {
   constructor(props) {
     ...
-    // 在组件构造器中定义 react-navigation 的 param 参数
+    // define the react-navigation params in the constructor 
     props.navigation.setParams({
       disableBack: true,
-      backPage: 'Bar', // 按了回退键后跳转的页面
-      backPageParams: { foo: 'foo' }, // 跳转页面时所需的参数
-      isModalShow: () => this.state.isVisible, // 提供一个方法来返回 modal 是否打开的 state
-      closeModal: () => this.setState({ isVisible: false }), // 提供一份方法来关闭 modal
+      backPage: 'Bar', // the page when click back button will navigate to
+      backPageParams: { foo: 'foo' }, // the params in the navigate behave
+      isModalShow: () => this.state.isVisible, // the funtion to check the modal whether to open
+      closeModal: () => this.setState({ isVisible: false }), // the function to close the modal
     });
   }
   ...
 }
 ```
 
-## 额外的 API
+## Extra API
 
-另外 `React Native Android Backer` 提供了不需要使用 `react-navigation` 的 `navigation` 对象就可以调用的 API：
+`React Native Android Backer` also provide the extra API which is easy use the features of `react-navigation` but no need the `navigation` object: 
 
-* navigate: 页面跳转
-* goBack: 页面回退
-* getCurrentRoute: 获取当前页面对象
+* navigate(page: string): navigate to some page
+* goBack(): go back to latest page
+* getCurrentRoute(): get the current page object
 
-使用示例：
+Example:
 
 ```js
 import React, { Component } from 'react';
@@ -126,10 +126,10 @@ class Foo extends Component {
 }
 ```
 
-## 示例
+## Demo
 
-[示例 App](./example)
+[Demo](./example)
 
-## 许可证
+## LICENSE
 
 [Apache-2.0](./LICENSE)
