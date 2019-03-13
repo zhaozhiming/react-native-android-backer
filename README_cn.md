@@ -2,9 +2,9 @@
 
 [英文文档](./README.md)
 
-## 是什么？
+## 这是什么？
 
-`React Native Android Backer` 是一个处理 Android 回退按钮的解决方案，它结合了 `react-navigation` 的 API 从而提供了强大的功能，比如：
+`React Native Android Backer` 是一个处理 Android 回退按钮的解决方案，它结合了 `react-navigation` 的 API 从而提供了强大的功能，特性如下：
 
 * 连续点击回退按钮退出 App
 * 设置是否禁用回退按钮
@@ -61,7 +61,7 @@ const AppNavigatorWithBacker = withBacker(AppNavigator, {
 
 `React Native Android Backer` 通过 `react-navigation` 的 [跳转参数](https://reactnavigation.org/docs/en/params.html) 进行回退行为判断，有以下参数可以使用：
 
-* disableBack：类型为布尔值，禁止回退按钮，即按了回退按钮没有任何反应
+* disableBack：类型为布尔值，是否禁止回退按钮，即按了回退按钮没有任何反应
 * backPage && backPageParams： backPage 类型为字符串，backPageParams 类型为对象，传入这 2 个参数时表示点击回退按钮会跳转到某个页面并带上跳转参数
 * isModalShow && closeModal：isModalShow 类型为方法， closeModal 类型为方法，传入这 2 个参数时表示点击回退按钮会关闭 modal 弹出框
 
@@ -113,7 +113,11 @@ class Foo extends Component {
   getCurrentPage = () => {
     const currentPage = navigationServer.getCurrentRoute();
     // currentPage: {
-    //   ...
+    //   "key": "id-1552444588477-2",
+    //   "params": {
+    //     "disableBack": true,
+    //   },
+    //   "routeName": "Settings",
     // }
   }
   ...
@@ -122,8 +126,8 @@ class Foo extends Component {
 
 ## 示例
 
+[示例 App](./example)
+
 ## 许可证
 
-Apache-2.0
-
-
+[Apache-2.0](./LICENSE)
