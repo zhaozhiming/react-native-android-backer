@@ -1,8 +1,8 @@
 # React Native Android Backer
 
-![](./demo.gif)
+## [中文文档](./README_cn.md)
 
-[中文文档](./README_cn.md)
+![](./demo.gif)
 
 ## What
 
@@ -17,7 +17,7 @@
 
 ```sh
 npm install react-native-android-backer
-// 或
+// or 
 yarn add react-native-android-backer
 ```
 

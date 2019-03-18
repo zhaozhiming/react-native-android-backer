@@ -1,8 +1,8 @@
 # React Native Android Backer
 
-![](./demo.gif)
+## [英文文档](./README.md)
 
-[英文文档](./README.md)
+![](./demo.gif)
 
 ## 这是什么？
 
