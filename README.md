@@ -1,5 +1,7 @@
 # React Native Android Backer
 
+[![Build status](https://travis-ci.com/zhaozhiming/react-native-android-backer.svg?branch=master)](https://travis-ci.com/zhaozhiming/react-native-android-backer)
+
 ## [中文文档](./README_cn.md)
 
 ![](./demo.gif)
