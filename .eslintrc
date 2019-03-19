@@ -1,6 +1,11 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "@react-native-community", "prettier"],
+  "env": {
+    "commonjs": true,
+    "es6": true,
+    "jest": true
+  },
   "rules": {
     "curly": "off",
     "import/no-extraneous-dependencies": "off",

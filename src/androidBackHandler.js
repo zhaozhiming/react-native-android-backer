@@ -6,7 +6,10 @@ const EXIT_APP_EVENT_NAME = 'EXIT_APP_PRESS';
 // Second timestamp to click back button which should be less 2 seconds than current timestamp
 let rebackTime = Date.now() - 2000;
 
-const handlerBack = ({ exitToast = () => {}, isExitScreen = () => false }) => {
+export const handlerBack = ({
+  exitToast = () => {},
+  isExitScreen = () => false,
+}) => {
   const currentRoute = navigationService.getCurrentRoute();
   const { routeName, params } = currentRoute;
 

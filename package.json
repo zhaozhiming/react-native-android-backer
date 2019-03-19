@@ -10,7 +10,11 @@
   ],
   "scripts": {
     "lint": "eslint src",
-    "prepare": "yarn run lint"
+    "test": "jest --passWithNoTests --env=jsdom src",
+    "prepublishOnly": "yarn run lint && yarn test"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "repository": {
     "type": "git",
@@ -31,12 +35,15 @@
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.2",
     "babel-eslint": "^10.0.1",
+    "babel-preset-expo": "^5.1.1",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "expo": "^32.0.6",
+    "jest-expo": "^32.0.0",
     "react": "^16.8.4",
     "react-native": "^0.58.6",
     "react-navigation": "^3.3.2"
